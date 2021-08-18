@@ -2,15 +2,15 @@
 <html>
     <body>
         <script>
-            //if passeger age under 2 years consider age infant.
             var age=10
             console.log("Age: "+age);
             if(age<2)
                 console.log("Infant");
-            else
-                console.log("Not Infant");
-                
-            if (age>11)
+
+            else if(age>=2 && age<=11)
+                console.log("Children");
+
+            else (age>11)
                 console.log("Adult");
         </script>
     </body>
