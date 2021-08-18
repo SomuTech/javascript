@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html>
+    <body>
+        <script>
+            var heights = [120,145,132,178,156];
+            /*console.log(heights);
+            heights[1]=100;
+            heights.push(180);
+            heights.pop()*/
+            console.log(heights);
+            var sum=0
+            //for loop
+            /*for(var i=0; i<heights.length; i++)
+             sum+=heights[i];*/
+             
+            //for of loop
+            for(var i of heights)
+               sum+=i;
+            console.log(sum/heights.length);
+        </script>
+
+    </body>
+</html>
