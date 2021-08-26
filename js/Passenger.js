@@ -1,4 +1,4 @@
-class Passenger
+export class Passenger
 {
     constructor(fname,lname,gender,dob,age)
     {

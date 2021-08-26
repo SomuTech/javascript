@@ -1,4 +1,4 @@
-class Gender
+export class Gender
 {
     constructor(code,name)
     {

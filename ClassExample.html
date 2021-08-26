@@ -1,9 +1,13 @@
 <!DOCTYPE>
 <html>
     <body>
-        <script src="js/gender.js"></script>
-        <script src="js/Passenger.js"></script>
-        <script>
+        <!-- <script src="js/gender.js"></script>
+        <script src="js/Passenger.js"></script> -->
+
+        <script type="module">
+            import { Gender } from "./js/gender.js";
+            import { Passenger } from "./js/Passenger.js";
+
             var male=new Gender("M","Male");
             var female=new Gender("F","Female");
 
