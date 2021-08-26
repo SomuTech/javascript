@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            let arr =[0,1,2,3,4,5];
+            console.log("Array:  "+ arr);
+            //pop()
+            console.log("poped item: "+ arr.pop()); //5
+            console.log("Array:  "+ arr); //0,1,2,3,4
+            //push()
+            arr.push(5);
+            console.log("Array:  "+ arr); //0,1,2,3,4,5
+
+            //indexOf()
+            console.log(arr.indexOf(3)); //3 --returns -1 if not found
+            //includes()
+            console.log(arr.includes(4)); //true
+
+            //forEach loop
+            let students = [
+            {id:10, name:'ram', dept:'cse'},
+            {id:11, name:'nidhi', dept:'csse'},
+            {id:12, name:'praba', dept:'it'},
+            {id:13, name:'praba', dept:'cse'}
+            ];
+            for(let student of students)
+                console.log(student.name);
+            console.log("....using forEach.....");
+                students.forEach(student => console.log(student.name));
+
+            //find() --gives first member only
+            for(let student of students){
+                if(student.name == 'praba'){
+                    console.log(student);
+                    break;
+                }
+            }
+            console.log('.....using find()....');
+            let student = students.find(student => student.name=='praba');
+            console.log(student);
+
+            //filter() --gives all the members
+            student = students.filter(student => student.name=='praba');
+            console.log(student);
+            student = students.filter(student => student.id>11);
+            console.log(student);
+
+            //map() --creates internal array itself
+            let oddNum = arr.map(n =>2*n-1);
+            console.log(oddNum);
+            console.log(arr);
+
+            //join() 
+            console.log("join():  "+ arr.join(' next '));
+
+            //reduce()
+            let total = arr.reduce((sum,item) => sum+item,0);
+            console.log(total); //15
+            // sum  item    sum+item    accumulator=0
+            // 0    1       1           1
+            // 1    2       3           3
+            // 3    3       6           6
+            //......
+
+            // sort()
+            var list = ['nm', 'io', 'ty', 'asd','qsa','cvf'];
+            console.log(list);
+            list.sort();
+            console.log(list);
+            
+        </script>
+    </body>
+</html>
