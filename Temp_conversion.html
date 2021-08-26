@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <link rel="stylesheet" href="css/tempConve.css">
+    </head>
+    <h1><center>Temperature Converter</h1></center></h1>
     <body>
-        <script src="js/script.js"></script>
-        <script>   
-            console.log(toFarenheit(56));
+        <br>
+        <!-- <div id="container"> -->
+            <div class="input">Enter Celsius :<input id="number1" type="number" placeholder="enter celsius"></div>
+        <!-- </div> -->
+        <button onclick="toFarenheit()" id="btn1">click</button>
+        <script>document.getElementById("number1").innerHTML = toFarenheit();
         </script>
+
+        <br><br>
+        <!-- <div id="container"> -->
+            <div class="input">Enter Fahrenheit :<input id="number2" type="number" placeholder="enter Fahrenheit"></div>
+        <!-- </div> -->
+        <button onclick="toCelsius()" id="btn2">click</button>
+        
+        <script src="js/script.js"></script>
     </body>
 </html>

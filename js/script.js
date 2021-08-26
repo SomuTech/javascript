@@ -1,15 +1,13 @@
 //Temperature conversion
-function toFarenheit(celsius) 
+function toFarenheit() 
 {
-    console.log("celsius: "+celsius);
-    var Fahrenheit = (celsius*9/5+32);
-    //console.log("Fahrenheit:" + Fahrenheit);
-    return Fahrenheit;
+    var celsius=document.getElementById("number1").value;
+    return (celsius*9/5+32);
 }
-//Area of Rectangle
-function areaOfRectangle(length,width)
+document.getElementById("number1").innerHTML = toFarenheit();
+function toCelsius() 
 {
-    var area = length*width;
-    //console.log("Area of Rectangle is: "+ area);
-    return area;
+    var Fahrenheit=document.getElementById("number2").value;
+    var Celsius= ((5/9)*(Fahrenheit-32));
+    document.write(Celsius);
 }
