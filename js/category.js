@@ -1,6 +1,14 @@
-var books =       { id: 1, code: "BO", name: "Books" };
-var electronics = { id: 2, code: "EL", name: "Electronics" };
-var apparels =    { id: 3, code: "AP", name: "Apparels" };
-var households =  { id: 4, code: "HI", name: "Household Items" };
+class Category
+{
+    constructor (id,name,code)
+    {
+        this.id=id;
+        this.name=name;
+        this.code=code;
+    }
 
-var categories = [books, electronics, apparels, households];
+    getDisplayText()
+    {
+        return this.name +" sold by:";
+    }
+}

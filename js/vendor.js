@@ -1,4 +1,11 @@
-var star =  { id: 1, name: "Star Enterprises", contactNumber: 7834987234 };
-var cloud = { id: 2, name: "Cloudtail Retail Ltd", contactNumber: 8798776766 };
+class Vendor {
+    constructor (id, name, contactNumber) {
+        this.id = id;
+        this.name = name;
+        this.contactNumber = contactNumber;
+    }
 
-var vendors= [star, cloud];
+    getDisplayText() {
+        return this.name + " (" + this.contactNumber + ")";
+    }
+}
