@@ -1,4 +1,4 @@
-class Category
+export class Category
 {
     constructor (id,name,code)
     {

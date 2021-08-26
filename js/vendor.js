@@ -1,4 +1,4 @@
-class Vendor {
+export class Vendor {
     constructor (id, name, contactNumber) {
         this.id = id;
         this.name = name;
