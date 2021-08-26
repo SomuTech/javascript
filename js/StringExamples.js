@@ -43,3 +43,12 @@ function PrintIndex()
             console.log(i+1);
     }
 }
+
+//print each word in a string
+str="print each word in a string";
+function PrintWord()
+{
+    var words=str.split(" ");
+    for(var i=0; i<words.length; i++ )
+            console.log(words[i]);
+}
