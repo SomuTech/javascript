@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html>
+    <body>
+        <script>
+            class Gender
+            {
+                constructor(code,name)
+                {
+                    this.code=code;
+                    this.name=name;
+                }
+            }
+            class Passenger
+            {
+                constructor(fname,lname,gender,dob,age)
+                {
+                    this.fname=fname;
+                    this.lname=lname;
+                    this.gender=gender;
+                    this.dob=dob;
+                    this.age=age;
+                }
+                getFullName()
+                {
+                    var title=this.gender.code=='F'?'Mrs':'Mr';
+                    return title+ " "+this.fname+" "+this.lname;
+                }
+            }
+            var male=new Gender("M","Male");
+            var female=new Gender("F","Female");
+
+            var passenger1=new Passenger('somu','solo',male,'18-01-2020',20);
+            /* console.log(passenger1);
+            console.log(male);
+            console.log(female); */
+            console.log(passenger1.getFullName());
+        </script>
+    </body>
+</html>
