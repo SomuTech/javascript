@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            //backslash usage
+            console.log('1st line\n new line');
+            console.log('\t tab');
+            console.log('\u00A5');
+            console.log('\u{1F60E}');
+            console.log('\'master\' class');
+
+            //object examples
+            console.log("hello!".length)  //6
+            console.log("hello".charAt(2)); //l
+            console.log("hello"[1]); //e
+
+            //string immutable-unchangeble
+            var hello="hello";
+            hello[1]='k';
+            console.log(hello); //hello
+            hello="HeLlo";
+
+            //upper and lower
+            console.log("upper case:" + hello.toUpperCase());
+            console.log("lower case:" + hello.toLowerCase());
+            console.log(hello);
+
+            //string in another string
+            console.log("somasekhar".indexOf('soma')); //0
+            console.log("somasekhar".indexOf('k'));  //6
+            console.log("somasekhar".indexOf('z')); //-1
+            console.log("somasekhar".includes('ss')); //false
+            console.log("somasekhar".startsWith('so'));  //true
+            console.log("somasekhar".endsWith('kr'));  //false
+
+            //string extraction
+            console.log("somasekhar".substr(4)); //sekhar
+            console.log("somasekhar".substring(4)); //sekhar
+            console.log("somasekhar".slice(4)); //sekhar
+            //all same
+            console.log("somasekhar".substr(0,4)); //soma
+            console.log("somasekhar".substr(2,6)); //masekh
+            //substr - reverse traversale possible
+            console.log("somasekhar".slice(3,7)); //asek
+            //slice - reverse traversale not possible
+            
+        </script>
+    </body>
+</html>
