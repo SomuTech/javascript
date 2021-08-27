@@ -4,8 +4,9 @@
         <p id="para">para.</p>
         <script>
             let para = document.getElementById("para");
-            console.log(para.innerText);
-            para.innerText = "para changed.";
+            console.log(para.getAttribute("id"));
+            para.setAttribute("id","para1");
+            console.log(para.getAttribute("id"));
         </script>
     </body>
 </html>
