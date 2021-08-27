@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Airlines Infant Policy</h1>
+        <label for="age">Age</label><br>
+        <input type="text" id="age"> 
+        <h3 id="category"></h3>
+        <script>
+            let age=document.getElementById("age");
+            let category =document.getElementById("category");
+
+            age.addEventListener("keyup",function() {
+                if(age.value<2)
+                    category.innerText = "Infant";
+                else if(age.value>=2 && age.value<=11)
+                    category.innerText = "Children";
+                else if(age.value>11)
+                    category.innerText = "Adult";
+            });
+        </script>
+    </body>
+</html>
