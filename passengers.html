@@ -12,6 +12,11 @@
             let category =document.getElementById("category");
 
             findCategory.addEventListener("click",function() {
+                if (age.value=='')
+                {
+                    category.innerText = "";
+                    return;
+                }
                 if(age.value<2)
                     category.innerText = "Infant";
                 else if(age.value>=2 && age.value<=11)
