@@ -1,4 +1,4 @@
-let serch =document.getElementById("search");
+let search =document.getElementById("search");
 let items = document.getElementsByClassName("item");
 
 for(i=0; i<items.length; i++)
