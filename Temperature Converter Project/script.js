@@ -4,7 +4,7 @@ let answer2 = document.getElementById("answer2");
 let celsius=document.getElementById("number1").value;
 let Fahrenheit=document.getElementById("number2").value;
 
-function toFarenheit() 
+function toFarenheit()  
 {
     var celsius=document.getElementById("number1").value;
     answer1.innerText=celsius*9/5+32;
