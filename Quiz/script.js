@@ -1,32 +1,37 @@
  
-const startButton=document.getElementById("start-btn");
-const nextButton=document.getElementById('next-btn');
-
-const questionContainerElement=document.getElementById('question-container');
+const start=document.getElementById("start-btn");
+const next=document.getElementById('next-btn');
+const submit = document.getElementById('submit-btn')
+const questionContainer=document.getElementById('question-container');
 let questionElement= document.getElementById("question");
-const answerButtonsElement=document.getElementById('answer-buttons');
+const answerButtons=document.getElementById('answer-buttons');
 
-let currentQuestionIndex;
-let quizScore=0;
+let QuestionIndex, quizScore=0;
 
-startButton.addEventListener("click",startGame);
-
-nextButton.addEventListener("click", () =>{
-    currentQuestionIndex++;
+start.addEventListener("click",startGame);
+next.addEventListener("click", () =>{
+    QuestionIndex++;
     setNextQuestion();
 });
 
 function startGame() {
-    startButton.classList.add("hide");
-    currentQuestionIndex = 0;
-    questionContainerElement.classList.remove("hide");
+    start.classList.add("hide");
+    QuestionIndex = 0;
+    questionContainer.classList.remove("hide");
     setNextQuestion();
     quizScore=0;
 }
 
 function setNextQuestion() {
     resetState();
-    showQuestion(questions[currentQuestionIndex]);
+    showQuestion(questions[QuestionIndex]);
+}
+
+function resetState(){
+    clearStatusClass(document.body)
+    next.classList.add("hide");
+    while(answerButtons.firstChild)
+        answerButtons.removeChild(answerButtons.firstChild);
 }
 
 function showQuestion(question){
@@ -38,15 +43,8 @@ function showQuestion(question){
         if(answer.correct)
             button.dataset.correct = answer.correct;
         button.addEventListener("click",selectAnswer);
-        answerButtonsElement.appendChild(button);
+        answerButtons.appendChild(button);
     });
-}
-
-function resetState(){
-    clearStatusClass(document.body)
-    nextButton.classList.add("hide");
-    while(answerButtonsElement.firstChild)
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
 }
 
 function selectAnswer(e){
@@ -54,19 +52,20 @@ function selectAnswer(e){
     const correct = selectedButton.dataset.correct;
 
     setStatusClass(document.body,correct)
-    Array.from(answerButtonsElement.children).forEach((button) => {
+    Array.from(answerButtons.children).forEach((button) => {
         setStatusClass(button,button.dataset.correct)
     });
 
-    if(questions.length> currentQuestionIndex + 1)
-        nextButton.classList.remove("hide");
+    if(questions.length> QuestionIndex + 1)
+        next.classList.remove("hide");
     else{
-        startButton.innerText = quizScore;
-        startButton.classList.remove("hide");
+        submit.classList.remove("hide");
+        submit.addEventListener("click",stopGame);
     }
 
     if(selectedButton.dataset = correct)
         quizScore++;
+        //
         document.getElementById('right-answers').innerHTML = quizScore;
 }
 
@@ -85,51 +84,76 @@ function clearStatusClass(element)
     
 }
 
+function stopGame()
+{
+    submit.classList.add("hide");
+    questionContainer.classList.add("hide");
+    document.getElementById('tq').innerText="Thank You";
+}
+
 //questions
 const questions=[
     {
-        question:'which one of these is a frame work?',
+        question:'1.which one of the following is called as "Brain of Computer System" ?',
         answers:[
-            {text:'python',correct:false},
-            {text:'Django',correct:false},
-            {text:'React',correct:true},
-            {text:'eclipse',correct:false}
+            {text:'ALU',correct:false},
+            {text:'Control Unit',correct:false},
+            {text:'CPU',correct:true},
+            {text:'Memory',correct:false}
         ],
     },
     {
-        question:'which one of these are languages?',
+        question:'2.The Octal System uses powers of....?',
         answers:[
-            {text:'python',correct:true},
-            {text:'html',correct:false},
-            {text:'React',correct:false},
-            {text:'eclipse',correct:false}
-        ],
-    },
-    {
-        question:'which these are languages?',
-        answers:[
-            {text:'python',correct:true},
-            {text:'html',correct:false},
-            {text:'React',correct:false},
-            {text:'eclipse',correct:false}
-        ],
-    },
-    // {
-    //     question:'which one of these are languages?',
-    //     answers:[
-    //         {text:'python',correct:true},
-    //         {text:'html',correct:false},
-    //         {text:'React',correct:false},
-    //         {text:'eclipse',correct:false}
-    //     ],
-    // },
-     {
-        question:'what is 10****2 ?',
-        answers:[
-            {text:'1000',correct:false},
+            {text:'8',correct:true},
+            {text:'2',correct:false},
             {text:'10',correct:false},
-            {text:'100',correct:true},
-            {text:'10000',correct:false}
+            {text:'16',correct:false}
+        ],
+    },
+    {
+        question:'3.which of these are languages?',
+        answers:[
+            {text:'html',correct:false},
+            {text:'React',correct:false},
+            {text:'python',correct:true},
+            {text:'eclipse',correct:false}
+        ],
+    },
+    {
+        question:'4.By Which Javascript code is used?',
+        answers:[
+            {text:'Events',correct:false},
+            {text:'RMI',correct:false},
+            {text:'Methods/Functions',correct:true},
+            {text:'Classes/Objects',correct:false}
+        ],
+    },
+     {
+        question:'5.What is the value of 4-8*2+5?',
+        answers:[
+            {text:'-7',correct:true},
+            {text:'10',correct:false},
+            {text:'-3',correct:false},
+            {text:'17',correct:false}
+        ],
+    },
+    {
+        question:'6.Which one of the following is not a framework?',
+        answers:[
+            {text:'python',correct:true},
+            {text:'Django',correct:false},
+            {text:'React',correct:false},
+            {text:'Angular',correct:false}
+        ],
+    },
+     {
+        question:'7.In javascript, which is not valid data type ?',
+        answers:[
+            {text:'Number',correct:false},
+            {text:'Undefined',correct:false},
+            {text:'Boolean',correct:false},
+            {text:'Float',correct:true},
         ]
-    }
+    }  
 ];
