@@ -1,0 +1,35 @@
+body{
+    margin-left: 50px;
+    background-color: rgb(247, 247, 247);
+}
+h1
+{
+    color:blue;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+h2{
+    color:darkblue
+}
+label{
+    font-size:larger;
+    font-weight: 800;
+}
+
+.item {
+    padding: 0.75rem;
+    border: 0.05rem solid #ddd;
+    width: 14.55rem;
+    cursor: pointer;
+    display: none;
+}
+.item:hover {
+    background-color: #ddd
+}
+#search {
+    padding: 0.5rem;
+    border: 0.05rem solid #ddd;
+    outline: 0.05rem solid #ddd;
+    margin-bottom: 0.25rem;
+    width: 15rem
+}
