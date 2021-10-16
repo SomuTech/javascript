@@ -8,6 +8,7 @@ const answerButtons=document.getElementById('answer-buttons');
 
 let QuestionIndex, quizScore=0;
 
+
 start.addEventListener("click",startGame);
 next.addEventListener("click", () =>{
     QuestionIndex++;
@@ -50,6 +51,7 @@ function showQuestion(question){
 function selectAnswer(e){
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct;
+    questions.answers.blur();
 
     setStatusClass(document.body,correct)
     Array.from(answerButtons.children).forEach((button) => {
@@ -153,7 +155,34 @@ const questions=[
             {text:'Number',correct:false},
             {text:'Undefined',correct:false},
             {text:'Boolean',correct:false},
-            {text:'Float',correct:true},
+            {text:'Float',correct:true}
         ]
-    }  
+    } ,
+    {
+        question:'8.In javascript, which is not valid data type ?',
+        answers:[
+            {text:'Number',correct:false},
+            {text:'Undefined',correct:false},
+            {text:'Boolean',correct:false},
+            {text:'Float',correct:true}
+        ]
+    },
+    {
+        question:'9.Which one of the following is not a framework?',
+        answers:[
+            {text:'python',correct:true},
+            {text:'Django',correct:false},
+            {text:'React',correct:false},
+            {text:'Angular',correct:false}
+        ],
+    }, 
+    {
+        question:'10.What is the value of 9+8*2-5?',
+        answers:[
+            {text:'-7',correct:true},
+            {text:'20',correct:false},
+            {text:'-3',correct:false},
+            {text:'29',correct:false}
+        ],
+    }
 ];

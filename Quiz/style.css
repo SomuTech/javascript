@@ -1,29 +1,22 @@
-:root{
-    --hue-neutral :200;
-    --hue-wrong :0;
-    --hue-correct: 145;
-}
-
 body
 {
-    --hue:var(--hue-neutral);
     padding:0;
     margin:0;
     display:flex;
     width:100vw;
-    height:100vw;
+    height:48vw;
     justify-content:center;
     align-items:center;
-    background-color: hsl(var(--hue),100%,20%);
+    background-color: gray;
 }
 
 body.correct
 {
-    --hue :var(--hue-correct)
+   background-color: blue;
 }
 body.wrong
 {
-    --hue :var(--hue-wrong)
+    background-color: red;
 }
 
 .container{
@@ -50,9 +43,9 @@ body.wrong
 }
 
 .btn{
-    --hue:var(--hue-neutral);
+    background-color: rgb(236, 6, 6);
     border:1px solid hsl(var(--hue), 100% ,30%);
-    background-color:hsl(var(--hue), 100% ,50%);
+    background-color: blueviolet;
     border-radius: 5px;
     padding: 5px 10px;
     color:white;
@@ -65,12 +58,13 @@ body.wrong
 }
 
 .btn.correct{
-    --hue: var(--hue-correct);
-    color:black;
+    background-color:green;
+    color:white
 }
 
 .btn.wrong{
-    --hue: var(--hue-wrong);
+    background-color: red;
+
 }
 
 .start-btn,
